@@ -40,9 +40,9 @@ function handleGuess() {
     btn.onclick = () => location.reload(); // Disable the button after a correct guess
     inputField.value = ""; // Clear input field
   } else if (inputNumber > randomNumber) {
-    description.textContent = "Your guess is higher than the number!";
+    description.textContent = "The real number is lower than your guess!";
   } else {
-    description.textContent = "Your guess is lower than the number!";
+    description.textContent = "The real number is higher than your guess!";
   }
 
   // Store the guess
