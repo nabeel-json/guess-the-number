@@ -9,8 +9,8 @@ const maxAttempts = 10; // Set maxAttempts as a constant
 
 console.log(randomNumber); // For debugging
 
-btn.addEventListener("click", () => {
-  // Get the input value inside the event listener
+// Function to handle the guessing logic
+function handleGuess() {
   const inputNumber = Math.round(Number(inputField.value));
 
   // Validate the input
@@ -24,10 +24,8 @@ btn.addEventListener("click", () => {
   // Check if the user has reached the maximum attempts
   if (attempts >= maxAttempts) {
     description.textContent = `Game over! The number was ${randomNumber}.`;
-    btn.textContent = "Restart";
-    btn.addEventListener("click", () => {
-      location.reload();
-    }); // Disable the button after max attempts
+    btn.textContent = "Click to Restart";
+    btn.onclick = () => location.reload(); // Disable the button after max attempts
     inputField.value = "";
     return; // Exit the function
   }
@@ -38,11 +36,9 @@ btn.addEventListener("click", () => {
     previousGuessesPara.textContent = `Previous Guesses: ${previousGuesses.join(
       ", "
     )}`;
-    btn.textContent = "Restart";
-    btn.addEventListener("click", () => {
-      location.reload();
-    }); // Disable the button after max attempts
-    inputField.value = ""; // Disable the button after a correct guess
+    btn.textContent = "Click to Restart";
+    btn.onclick = () => location.reload(); // Disable the button after a correct guess
+    inputField.value = ""; // Clear input field
   } else if (inputNumber > randomNumber) {
     description.textContent = "Your answer is high!";
   } else {
@@ -57,4 +53,14 @@ btn.addEventListener("click", () => {
 
   // Clear the input field after submission
   inputField.value = "";
+}
+
+// Button click event
+btn.addEventListener("click", handleGuess);
+
+// Enter key event on input field
+inputField.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    handleGuess();
+  }
 });
