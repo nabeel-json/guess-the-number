@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Guess 😁</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="flex justify-center items-center h-screen">
+    <div
+      class="flex flex-col justify-center items-center gap-4 text-center w-[min(450px,85%)] leading-8 text-lg"
+    >
+      <h1 class="font-bold text-3xl text-blue-700">Guess the Number</h1>
+      <p>
+        The game has selected a random number between 1 and 100. See if you can
+        guess it in 10 turns or fewer. The game will tell you if your guess was
+        too high or too low. Good luck 👋.
+      </p>
+      <input
+        id="input-field"
+        type="number"
+        required
+        min="1"
+        max="100"
+        placeholder="Enter a number..(1 - 100)"
+        class="w-[min(300px,95%)] bg-white border-[1px] border-blue-500 text-lg px-2 py-1"
+      />
+      <p id="previous-guesses" class="font-bold"></p>
+      <p id="description" class="text-blue-500"></p>
+      <button
+        class="py-2 px-5 rounded-sm bg-blue-500 hover:bg-blue-400"
+        type="submit"
+      >
+        Submit
+      </button>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
