@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>👨‍💻 Guess the Number</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="typing.css">
   </head>
   <body class="flex justify-center items-center h-screen">
     <div
       class="flex flex-col justify-center items-center gap-4 text-center w-[min(450px,85%)] leading-8 text-lg"
     >
-      <h1 class="font-bold text-3xl text-blue-700">Guess the Number</h1>
+      <div class="wrapper">
+        <div class="typing-demo">
+          <h1 class="font-bold text-3xl text-blue-700">Guess the Number</h1>
+        </div>
+      </div>
       <p>
         The game has selected a random number between 1 and 100. See if you can
         guess it in 10 turns or fewer. The game will tell you if your guess was
