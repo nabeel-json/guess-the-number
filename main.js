@@ -38,7 +38,11 @@ btn.addEventListener("click", () => {
     previousGuessesPara.textContent = `Previous Guesses: ${previousGuesses.join(
       ", "
     )}`;
-    btn.disabled = true; // Disable the button after a correct guess
+    btn.textContent = "Restart";
+    btn.addEventListener("click", () => {
+      location.reload();
+    }); // Disable the button after max attempts
+    inputField.value = ""; // Disable the button after a correct guess
   } else if (inputNumber > randomNumber) {
     description.textContent = "Your answer is high!";
   } else {
