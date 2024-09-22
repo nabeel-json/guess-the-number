@@ -24,7 +24,7 @@ function handleGuess() {
   // Check if the user has reached the maximum attempts
   if (attempts >= maxAttempts) {
     description.textContent = `Game over! The number was ${randomNumber}.`;
-    btn.textContent = "Click to Restart";
+    btn.textContent = "Click to Restart / Ctrl + R";
     btn.onclick = () => location.reload(); // Disable the button after max attempts
     inputField.value = "";
     return; // Exit the function
@@ -36,7 +36,7 @@ function handleGuess() {
     previousGuessesPara.textContent = `Previous Guesses: ${previousGuesses.join(
       ", "
     )}`;
-    btn.textContent = "Click to Restart";
+    btn.textContent = "Click to Restart / Ctrl + R";
     btn.onclick = () => location.reload(); // Disable the button after a correct guess
     inputField.value = ""; // Clear input field
   } else if (inputNumber > randomNumber) {
